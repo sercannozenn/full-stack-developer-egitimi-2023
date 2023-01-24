@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Bootstrap -->
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/uicons-regular-rounded/css/uicons-regular-rounded.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,400;1,700&display=swap"
+          rel="stylesheet">
+    <!-- Fonts -->
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<nav class="navbar bg-dark">
+    <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1 text-white">To Do List</span>
+    </div>
+</nav>
+<div class="container my-5">
+    <div class="row">
+        <div class="col-12">
+            <div class="card w-100">
+                <div class="card-header">
+                    <h2 class="card-title fw-400">Create Task</h2>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12 col-sm-10 col-md-8">
+                            <input type="text" placeholder="New Task Name" class="form-control">
+                        </div>
+                        <div class="col-12 col-sm-2 col-md-4 mt-3 mt-md-0">
+                            <a href="" class="btn btn-success w-100 btn-add-task-list">Add Task List <i class="fa fa-plus ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card w-100 mt-5">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-12 col-md-3">
+                            <h2 class="card-title fw-400 mb-0">Task List</h2>
+                        </div>
+                        <div class="col-12 col-md-3 mt-3 mt-md-0">
+                            <a href="" class="btn btn-success w-100">Tamamlandı</a>
+                        </div>
+                        <div class="col-12 col-md-3 mt-3 mt-md-0">
+                            <a href="" class="btn btn-danger w-100">Listeden Çıkar</a>
+                        </div>
+                        <div class="col-12 col-md-3 mt-3 mt-md-0">
+                            <a href="" class="btn btn-primary w-100">Tümünü Seç</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <ul class="list-group task-list p-3">
+                            <li class="list-group-item task-list-item px-3">
+                                <input type="checkbox" class="select-task me-3" id="selectTask">
+                                <label for="selectTask">Lorem ipsum.</label>
+                                <i class="fa fa-2x fa-trash text-primary float-end trashed"></i>
+                            </li>
+                            <li class="list-group-item task-list-item px-3">
+                                <input type="checkbox" class="select-task me-3" id="selectTask2">
+                                <label for="selectTask2">Lorem ipsum.</label>
+                                <i class="fa fa-2x fa-trash text-primary float-end trashed"></i>
+                            </li>
+                            <li class="list-group-item task-list-item px-3">
+                                <input type="checkbox" class="select-task me-3" id="selectTask3">
+                                <label for="selectTask3">Lorem ipsum.</label>
+                                <i class="fa fa-2x fa-trash text-primary float-end trashed"></i>
+                            </li>
+                            <li class="list-group-item task-list-item px-3">
+                                <input type="checkbox" class="select-task me-3" id="selectTask4">
+                                <label for="selectTask4">Lorem ipsum.</label>
+                                <i class="fa fa-2x fa-trash text-primary float-end trashed"></i>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card w-100 mt-5">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <h2 class="card-title fw-400 mb-0">Completed Tasks</h2>
+                        </div>
+                        <div class="col-12 col-md-6 mt-3 mt-md-0">
+                            <a href="" class="btn btn-warning w-100">Clear List</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <ul class="list-group task-list p-3">
+                            <li class="list-group-item task-list-item px-3">
+                                <label>Lorem ipsum.</label>
+                            </li>
+                            <li class="list-group-item task-list-item px-3">
+                                <label>Lorem ipsum.</label>
+                            </li>
+                            <li class="list-group-item task-list-item px-3">
+                                <label>Lorem ipsum.</label>
+                            </li>
+                            <li class="list-group-item task-list-item px-3">
+                                <label>Lorem ipsum.</label>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<footer class="bg-dark h-50px">
+    <p class="m-0 text-white text-center footer-text">
+        &copy; Sercan Özen 2023
+    </p>
+</footer>
+
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

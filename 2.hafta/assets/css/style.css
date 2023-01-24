@@ -1,0 +1,6 @@
+.navbar-nav .nav-link.active{
+    color: #000 !important;
+}
+.posts > *, .posts > * :after, .posts > * :before{
+    padding: 0.09em;
+}

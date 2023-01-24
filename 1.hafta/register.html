@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Full Stack Developer Eğitimi</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header>
+    <div class="header-description">
+        <small>Lorem ipsum dolor sit amet, consectetur adipisicing.</small>
+    </div>
+    <div class="authentication-link">
+        <ul>
+            <li><a href="login.html">Giriş</a></li>
+            <li><a href="register.html">Kayıt</a></li>
+        </ul>
+    </div>
+</header>
+<nav>
+    <div class="logo">
+        <img src="assets/img/logo.png" alt="Resim Yokken Gösterilecek" title="Title Alanı">
+    </div>
+    <div class="menu">
+        <ul>
+            <li><a href="index.html" class="active">Anasayfa</a></li>
+            <li><a href="about.html">Hakkımızda</a></li>
+            <li><a href="contact.html">İletişim</a></li>
+        </ul>
+    </div>
+</nav>
+<aside>
+    <div class="left-menu">
+        <h2>Kategoriler</h2>
+        <ul>
+            <li>Html</li>
+            <li>Css</li>
+            <li>Javascript</li>
+            <li>Jquery</li>
+            <li>PHP</li>
+            <li>Laravel</li>
+        </ul>
+    </div>
+</aside>
+<main>
+    <article>
+        <h1 class="text-center uppercase">Kayıt Ol</h1>
+    </article>
+    <form action="" method="" enctype="multipart/form-data" class="register">
+        <section class="row">
+            <div class="col-6">
+                <label for="name">Ad</label>
+                <input type="text" id="name" placeholder="Adınız">
+            </div>
+            <div class="col-6">
+                <label for="lastname">Soyad</label>
+                <input type="text" id="lastname" placeholder="Soyadınız">
+            </div>
+            <div class="col-6">
+                <label for="email">E-posta Adresi</label>
+                <input type="email" name="email" id="email" placeholder="E-posta Adresi">
+            </div>
+            <div class="col-6">
+                <label for="phone">Telefon Numarası</label>
+                <input type="text" name="phone" id="phone" placeholder="Telefon Numarası">
+            </div>
+            <div class="col-12">
+                <label for="address">Adres</label>
+                <textarea name="address" id="address" cols="30" rows="10" placeholder="Adres"></textarea>
+            </div>
+            <div class="col-12">
+                <input type="checkbox" name="terms" id="terms">
+                <label for="terms">Şartları Kabul Ediyorum.</label>
+            </div>
+            <div class="col-12 content-center">
+                <button type="submit" class="btn-register">Kaydet</button>
+                <button type="submit" class="btn-register" formaction="sercan.php" formtarget="_blank">Farklı Adrese Gönder</button>
+            </div>
+        </section>
+    </form>
+</main>
+<footer>
+    <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis ducimus eveniet fugiat necessitatibus numquam quasi saepe, similique sint sit voluptatum.</p>
+</footer>
+</body>
+</html>

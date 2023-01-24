@@ -1,0 +1,64 @@
+/*body{*/
+/*    background-color: #fff;*/
+/*}*/
+body > *{
+    font-family: "Open Sans", serif;
+}
+/*p{*/
+/*    color:#4f4f5a;*/
+/*    !*color: red !important;*!*/
+/*}*/
+.h-90px{
+    height: 90px;
+}
+.w-60{
+    width: 60%;
+}
+.w-90{
+    width: 90%;
+}
+.bg-section{
+    background-color: #eee;
+}
+.font-amatic{
+    font-family: 'Amatic SC', cursive;
+}
+.font-open-sans{
+    font-family: "Open Sans", serif;
+}
+.font-inter{
+    font-family: 'Inter', sans-serif;
+}
+.fw-700{
+    font-weight: 700!important;
+}
+.font-s28px{
+    font-size: 28px;
+}
+.font-s64px{
+    font-size: 64px;
+}
+.font-16px{
+    font-size: 16px;
+}
+.text-p-default{
+    color:#4f4f5a;
+}
+.text-jummy-color{
+    color:#7f7f90;
+}
+.navbar ul li a{
+    color:#7f7f90;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+}
+.navbar ul li a:hover{
+    color:#000
+}
+
+main section:nth-child(1)
+/*main section:nth-child(1) .container,*/
+/*main section:nth-child(1) .container .row*/
+{
+    height: calc(100vh - 90px);
+}
