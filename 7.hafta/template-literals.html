@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+
+
+
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/script.js"></script>
+<script>
+    /**
+     * Template Literals
+     */
+
+    var offices = [
+        "Erzurum",
+        "Ankara",
+        "Mardin",
+        "İstanbul",
+    ];
+
+    var days = [
+        "Pazar",
+        "Pazartesi",
+        "Salı",
+        "Çarşmaba",
+        "Perşembe",
+        "Cuma",
+        "Cumartesi"
+    ];
+
+
+    var person = {
+      firstName: "Aygün",
+      lastName: "Keçe",
+      fullName: function () {
+          return this.firstName + " " + this.lastName;
+      },
+        appointmentDate: new Date(2023, 0, 29, 15, 30, 0),
+        appOfficeId: 2
+    };
+
+    var appDate = person.appointmentDate.toLocaleDateString();
+    var appDay  = days[person.appointmentDate.getDay()];
+    var appHour = person.appointmentDate.getHours();
+    var appMinutes = person.appointmentDate.getMinutes();
+    // var test = person.appointmentDate.toLocaleTimeString();
+    var appHourFull = appHour + ":" + appMinutes;
+    var officeName = offices[person.appOfficeId];
+
+    var mailText = "Sayın " + person.fullName() + " " + appDate + " tarihi "
+    + appDay + " günü " + appHourFull + " saatinde " + officeName
+    + " ofisimizde randevunuz oluşturulmuştur.";
+    console.log(mailText);
+
+    var templateLiteralsText = `Sayın ${person.fullName()} ${appDate} tarihi ${appDay} günü ${appHourFull} saatinde ${officeName} ofisimizde randevunuz oluşturulmuştur.`;
+
+    console.log(templateLiteralsText);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

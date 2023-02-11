@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+
+
+
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/script.js"></script>
+<script>
+
+    /**
+     * JavaScriptte her şey window objesinin içerisinde yer alır.
+     */
+
+    var sercan = "Sercan";
+    let sercan2 = "sercan 2";
+    function sayfayiYenile()
+    {
+        window.location.reload();
+    }
+    console.log(window.location);
+    // sayfayiYenile();
+
+    /**
+     * try catch
+     * dene ve yakala
+     *
+     * Yazılımsal hataları yakalar ve sebebini öğrenerek isteğimiz doğrultusunda yönetebiliriz.
+     * Hata Yönetimi
+     */
+    try {
+        console.log("Test");
+    }catch (excption){
+        console.log(excption.message);
+        console.log(excption.name);
+    }
+
+    function sayiTut()
+    {
+        // return Math.random(); // 0 - 1 arasında rastgele değer tutar.
+        // return Math.random() * 10; // 0 - 10 arasında rastgele değer tutar.
+        // return Math.random() * 11; // 0 - 11 arasında rastgele değer tutar.
+        // return Math.random() * 100; // 0 - 100 arasında rastgele değer tutar.
+        return Math.round(Math.random() * 101); // 0 - 101 arasında rastgele değer tutar.
+    }
+
+    try {
+        let result = sayiTut();
+        console.log(result);
+        // console.log(result2sadsadd);
+    }catch (excption){
+        console.log("Girdi");
+        // console.log(excption);
+        console.log(excption.message);
+        // console.log(excption.name);
+    } finally {
+        console.log("Final")
+    }
+
+    // console.log(sayiTut());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

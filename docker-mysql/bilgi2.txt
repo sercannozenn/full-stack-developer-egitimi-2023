@@ -1,0 +1,28 @@
+Primary Key ile Unique Arasındaki Fark
+
+ikisi de benzersizdir.
+Ancak primary key olarak verdiğimiz field birincil anahtar
+olarak atanır ve indexlenir.
+Yani veriye daha hızlı şekilde ulaşmamız sağlanır.
+
+id, email => primary key
+
+telefon, tckimlik => unique
+
+İki sutuna aynı anda unique verdiğimizde iki sutununda
+ayrı ayrı uniqeligine bakar.
+
+İki sutuna aynı anda unique verdiğimizde iki sutununda
+beraber uniqeligine bakar.
+
+1 sercan@gmail.com
+2 aygun@gmail.com
+3 umut@gmail.com
+4 umut@gmail.com
+2 aygun@gmail.com
+
+
+543 545445454
+654 765756757
+566 545445454
+

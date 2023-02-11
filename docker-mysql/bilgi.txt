@@ -1,0 +1,38 @@
+Docker Nedir?
+
+- Açık kaynak kodlu container teknolojisidir.
+- Aynı işletim sistemi üzerinde birden fazla birbirinden bağımsız containerlar sayesinde sanallaştırma imkanı sağlar.
+- Hızlı derlememize, test etmemize ve dağıtmamıza (deploy) emtmemize imkan sağlar.
+
+
+******************************************
+
+
+Container Nedir?
+
+- Fiziksel sunucu üzerinde çalışmakta olan her bir işletim sistemine container diyebiliriz.
+
+******************************************
+
+Yaml Nedir?
+
+- Dil bağımsız bir değişim formatıdır.
+- Tüm yazılım dilleri arasında ortak olarak kullanılabilir.
+- Anlaşılması oldukça kolaydır ve göz yormaz.
+
+- Nesne yapıları kurulabilir.
+- Config işlemleri için de kullanılabilir.
+- Key:value şeklinde yazılır.
+
+******************************************
+
+Docker Compose Nedir?
+
+- Çok containerlı karmaşık servislerin tanımlamasını ve çalıştırılmasını sağlayan yapı/araçtır.
+
+
+
+
+
+
+

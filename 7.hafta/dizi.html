@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+
+
+
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/script.js"></script>
+<script>
+
+    /**
+     * Array - Diziler
+     */
+
+    var dizi = ["Aygün", "Recep", "Mehmet", "Umut"];
+    // console.log(dizi)
+    // console.log(dizi[2]);
+    // var dizi = ["Aygün", "Recep", "Mehmet", "Umut", 123, 334234, 324234.6,];
+
+    // var fonksiyonlar = [
+    //     function fullNameGetir(){
+    //     return "Sercan Özen";
+    //     },
+    //     function firstNameGetir(){
+    //     return "Sercan";
+    //     },
+    //     function lastNameGetir(){
+    //     return "Özen";
+    //     }
+    // ];
+    // console.log(fonksiyonlar);
+    // console.log(fonksiyonlar[0]);
+    // console.log(fonksiyonlar[0]());
+
+    // console.log(dizi.length);
+
+    var students = ["Aygün", "Recep"];
+    var students2= ["Mehmet", "Umut"];
+    /**
+     * Dizi Birleştirme
+     */
+
+    var sonuc = students + "," + students2;
+    // console.log(sonuc);
+    // console.log("*************")
+    var birlestirilenSonuc = students.concat(students2);
+    // console.log(birlestirilenSonuc);
+
+    /**
+     * Diziden eleman çıkarma
+     *
+     * Pop => Dizinin son elemanını çıkarır ve verir.
+     * Shift => Dizinin ilk elamanını çıkarır ve verir.
+     */
+var sondanCikar = birlestirilenSonuc.pop();
+    // console.log(sondanCikar);
+    // console.log(birlestirilenSonuc);
+
+    var bastanCikar = birlestirilenSonuc.shift();
+    // console.log(bastanCikar);
+    // console.log(birlestirilenSonuc);
+
+    /**
+     * Diziye eleman ekleme
+     * push => Dizinin sonuna eleman ekler
+     * unshift => Dizinin başına eleman ekler.
+     */
+    var cikarilanlar = [];
+    cikarilanlar.push(sondanCikar);
+    cikarilanlar.push(bastanCikar);
+    cikarilanlar.unshift("Test");
+
+    // console.log(cikarilanlar);
+
+
+    /**
+     * Diziden index e göre elaman çıkarma
+     */
+
+    cikarilanlar.splice(-1);
+    // console.log(cikarilanlar);
+
+    cikarilanlar.reverse();
+    // console.log(cikarilanlar);
+
+    var dizi = [ "Recep",  "Umut", "Mehmet", "Aygün"];
+
+    /**
+     * Dizinin elemanlarını alfabetik olarak sıralama
+     */
+    // console.log(dizi);
+    // dizi.sort();
+    // console.log(dizi);
+
+    /**
+     * Dizinin elemanlarına döngülerle nasıl ulaşırız?
+     */
+    // for (let i=0; i < dizi.length; i++){
+    //     console.log(dizi[i]);
+    // }
+
+    dizi.forEach(function (value, index, array) {
+        // console.log(value)
+        // console.log(index)
+    })
+
+
+    /**
+     * Dizinin içerisine objeler ekleyeceğiz
+     * Dizilerde dönerek objelerin içerisindeki fieldlara(alanlar) ulaşacağız.
+     */
+
+    var person1 = {
+        fullName: "Sercan Özen",
+        age: 28
+    };
+    var person2 = {
+        fullName: "Umut Sarı",
+        age: 15
+    };
+    var personList = [];
+    personList.push(person1, person2);
+    console.log(personList);
+
+    personList.forEach(function (value, index, array) {
+        // console.log(value.fullName);
+    });
+    for (let i =0; i < personList.length; i++){
+        // console.log(personList[i].fullName);
+    }
+
+    var fullNames = personList.map(function (value, index, array) {
+        return value.fullName;
+    });
+    console.log(fullNames);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

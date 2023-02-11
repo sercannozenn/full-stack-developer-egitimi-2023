@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  mysql:
+    platform: linux/x86_64
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./docker/mysql:/var/lib/mysql
+    environment:
+      #MYSQL_ROOT_PASSWORD: "12345678"
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      #MYSQL_USER: "sercan"
+      MYSQL_USER: ${MYSQL_USER}
+      #MYSQL_PASSWORD: "12345678"
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      #docker hub
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    environment:
+      PMA_HOST: mysql
+      #PMA_USER: root
+      #PMA_PASSWORD: "12345678"
+    depends_on:
+      - mysql
+    ports:
+      - "8080:80"
