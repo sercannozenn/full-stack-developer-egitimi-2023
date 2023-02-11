@@ -1,0 +1,114 @@
+Temel Terminal Komutları Linux
+
+
+~ => Tilda işareti Mac ve Windowsta User klasörünü ifade eder.
+
+mkdir klasörAdı => Klasör oluşturur.
+
+touch dosyaAdi  => Dosya Oluşturma
+
+ls => Bulunuluan klasörün içerisinde olan klasör ve dosyaları listeler.
+ls -a => Bulunuluan klasörün içerisinde olan gizli dosyalar dahil olmak üzere tüm dosyaları ve klasörleri listeler.
+
+windows listeleme komutu => dir
+
+*********************************
+
+cd klasörYolu => Klasöre giriş yapmak için kullanılır.
+
+.  => Bulunduğunuz klasörü işaret eder.
+.. => Bulunduğumuz klasörün bir üst klasörünü işaret eder.
+*  => Bulunduğumuz klasördeki herşeyi ifade eder.
+   => Tüm dosya isimlerini de ifade eder.
+a* => a ile başlayan tüm dosya isimlerini listeler
+b*.txt => b ile başlayan txt dosyası olan tüm dosyaları listeler
+abc??? => abc ile başlayan ve sonrasında 3 karakter daha devam edecek anlamına gelir.
+[abc] => a veya b veya c ile başlayan dosya isimlerini getirir.
+
+**************************************
+
+
+rmdir klasörAdı => Klasör Silinir. Windowstada aynı şekilde çalışır.
+rmdir klasörAdı /S => İçi dolu olan bir klasörü silmek için kullanılır.
+
+rm dosyaAdi => Dosya Siilme
+del dosyaAdi => Windowsta dosya silme
+
+clear => Ekranı temizler
+cls   => Windowsta ekranı temizler.
+
+****************************************
+
+pwd => Mevcut girdiğimiz/şu anda bulunduğumuz klasörün yolunu verir. Dizini gösterir
+
+cp => Dosya kopyalama
+cp kopyalananDosyaYolu kopyalanacakYol
+
+mv => Dosya Taşıma
+
+cat  => Dosyanın içeriğini görüntüleme
+nano => İşletim sisteminde yüklüyse dosya düzenlemeyi sağlar.
+vim
+
+
+history => geçmişte yazılmış komutları listeler.
+ok yönleriyle yukarı ve aşağı bastığımızda daha önce yazdığımız komutlara ulaşırız.
+
+
+******************************************
+
+Ping atma işlemi nasıl yapılır? Ping nasıl atılır?
+
+Örnek Google
+
+ping google.com
+
+*******************************************
+
+
+Komut sisteminde çalışan bir kod nasıl durdurulur ?
+
+CTRL + c
+Control + c
+
+********************************************
+
+sudo => Yönetici olmayı sağlar.
+
+Terminal herhangi bir işlem sonrasında parola sprulursa yazacağınız parola ekranda görünmeyecektir.
+Görülmemesine rağmen aslında klavyeden her bastığınız karekter yazılıyordur. Görmüyorsunuz diye yazılmıyor sanmayın.
+
+
+********************************************
+
+ls -al => Tüm dosya ve klasörlerin izinlerini listeler.
+
+chmod => dosya ve klasörlerin izinlerini değiştirmede kullanılır.
+
+chmod dan sonra gelen sayılar
+
+rwx = 7         r-w = 6         r-x = 5         r- = 4
+
+-d rwx rwx rwx
+Komutunun anlamı
+
+başta d harfi varsa klasör anlamına gelir.
+başta - karakteri varsa dosya anlamına gelir.
+
+r => Okuma İzni
+w => Yazma izni
+x => Çalıştırma izni
+
+ilk üçlü
+Dosyanın veya klasörün sahibinin izinleri
+
+ikinci üçlü
+Dosyanın veya klasörlerin gruptakiler için izinleri
+
+üçüncü üçlü
+Dosyanın veya klasörün diğer kullanıcılar için izinleri
+
+
+
+
+

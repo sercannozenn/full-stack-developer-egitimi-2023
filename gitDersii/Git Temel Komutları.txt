@@ -1,0 +1,167 @@
+Temel Git Komutları
+
+git init => Git i ilk defa bulunulan klasörde/projede oluşturmak için kullanılır.
+Git reposunu oluşmamızı sağlar.
+
+
+********************************
+
+
+git add dosyaAdı.uzantısı =>
+
+Bir dosya repoya gönderilmeden önce hazırlanma alanına gönderilmesi gerekir. Bu hazırlanma alanına staging area denir.
+Boşluk bırakarak birden fazla dosya aybnı anda staging areaya gönderilebilir.
+
+git add . => yapıldığında . ile staging areaya atılmamış tüm dosyaları staging areaya tar.
+
+git rm dosyaAdi.uzantısı --cached => staging areadna seçilen dosyayı çıkarır.
+git reset =>  staging areadan dosyayı veya dosyaları çıkarır.
+
+********************************
+
+git status => komutu ile staging area (hazırlık alanı) da bulunan ya da bulunmayan dosyaları görebiliriz.
+Bu sayede istediğiniz dosyaları bu komut ile kontrol ederek staging areaya atabilir ya da stagind areada olan dosyları commitleyebiliriz.
+
+********************************
+
+git commit => Staging areada bulunan dosyaları yerel repoya(local repository) yüklemek için kullanılır.
+
+git commit -m "Mesajınız" => -m tagi ile commit e ait mesajımızı belirtebiliriz.
+
+Yalnızca git commit yazdığımızda varsayılan git template i üzerinden mesajınızı yazmanızı sağlar.
+
+Commit mesajları emir kipiyle olmalıdır. Yapılan geliştirmeyle ilgili bilgi veren bir cümle kurulmalıdır.
+
+********************************
+
+git branch
+Dallanma
+
+Genellikle projenin ana dalı masterdır.
+
+Geçtiğimiz senelerde ana dalı main olarak güncellendi. Dilerseniz tabiki master olarak kullanabilirsiniz.
+
+git branch => hangi branchte olduğumu gösterir.
+
+Branchleri kullanmamızdaki iki temel amaç/yararı:
+
+1- Bireysel Geliştirme Yapıyosak
+
+Projemize yeni özellikler katmaya çalıştığımızda yani featurelar geliştirmek istediğimizde bu yeni geliştirmeler projemizin güncel halini
+bozabilme potansiyeline sahiptir. Hem projemizin o anki çalışmasını bozmamak hem de yeni geliştirmeyi yaparak projemizin güncel hali
+üzerinde görmek istiyorsak baranch yapısını kullanmamız yararlı olacaktır. Yani yeni bir branch açarak üzerinde geliştirmemizi yapmamız
+gerekecektir.
+
+Aynı anda birden fazla branch açılabilir.
+
+Geliştirme işlemi bittikten ve çalıştığından emin olduktan sonra bu yeni branchi hangi branchten açtıysak o branch ile merge(birleştirme)
+ederek projemizin güncel yayındaki haline alabiliriz.
+
+2- Ekip olarak geiştirme yapıyorsak
+
+Ekip olarak kullandığımızda ise yukarıdaki 1. maddede olan herşey geçerli buna ek olarak
+
+Ekip arkadaşklarımızla aynı anda projenin farklı alanlarını geliştirebiliriz. Bu geliştirme sırasında diğer ekip arkadaşımız projenin hangi
+anında yeni branch oluşturmuşsa o branch üzerinde o anki güncel bilgiler olacaktır. Bunun detayını deneyerek göreceğiz.
+
+********************************************************************************************************************************
+
+
+git branch branchAdi    => Yeni bir branch oluşturur.
+git checkout branchAdi  => Branch değiştirme
+git branch -d branchAdi => Branch silme
+
+********************************************************************************************************************************
+
+git remote add komutu
+Yerelde bulunan git repomuza uzak sunucuda bulunan repoyu ekleme işlemidir.
+
+Örnek kullanım:
+git remote add origin URL
+
+Yerel repomuza origin adlı bir uzak sunucu eklemiş olduk. Origin ismi genelde yaygun kullanıldığı için bu lekilde isimlendiriyoruz.
+Ancak farklı bir isim de verilebilir.
+
+********************************************************************************************************************************
+
+git push
+
+Bu komut ile yerel repomuzda bulunan commitleri uzak sunucuya göndermiş oluruz.
+
+git push origin branchAdi
+
+********************************************************************************************************************************
+
+git log
+yerel repomuzdaki commit geçmişimizi görebiliriz.
+Her commitmizin ayrı bir log ID si vardır.
+
+git log --pretty=oneline
+
+********************************************************************************************************************************
+
+git clone URL.git
+Uzak repomuzdaki projemizi klonlamak yani çekmek için kullanılır.
+
+********************************************************************************************************************************
+
+git pull
+Uzak repomuzda bulunan değişiklikleri yerel sunucumuza birleştirerek çekmemizi sağlar.
+
+********************************************************************************************************************************
+
+git merge branchAdi
+o anda üzerinde bulunulan branch ile birleştirme istenen branchi birleştirmek için kullanılır.
+
+********************************************************************************************************************************
+Uzak sunucuya / Uzak Repoya gönderilmemiş commitler için uygulanabilir.
+
+git reset --soft logID  => Belirtilen logID ye ait commiti ve sonraki commitleri silerek staging areada tutar.
+git reset --mixed logID => Belirtilen logID ye ait commit ve sonraki commitleri silerek staging areadan çıkarılmış şekilde tutar.
+git reset --hard logID  => Belirtilen logID ye ait commit ve sonraki commitleri siler.
+
+git reset --soft HEAD~1  => bir önceki commite dönmek için
+git reset --soft HEAD~2  => ikinci önceki commite dönmek için
+git reset --soft HEAD~5  => beş önceki commite dönmek için
+
+********************************************************************************************************************************
+
+git revert logID
+
+commit ettiğimiz herhangi bir değişikliği geri almak için kullanırız.
+ÇAlışma mantığı ise istenilen commiti geri alırken yeni bir commit oluşturur ve bu yeni commit ile geri alır.
+
+********************************************************************************************************************************
+
+git cherry-pick commitID/logID
+ilgili logID ye ait commiti üzerinde olduğumuz branchin içerisine kopyalar.
+
+********************************************************************************************************************************
+
+git diff
+farklılıkları gösterir
+
+********************************************************************************************************************************
+
+git stash
+
+Branchler arasında geçiş yapmak istiyoruz ama şu anda çalıştığımız branchte commit atmadığımız değişiklik yaptığımız dosyalar bulunuyorsa
+bu dosyalardaki değişikliklerin kaybolmasını istemiyorsak kullanabiliriz.
+
+git stash list
+
+Diyelim diğer branchte çalıştık ve işimiz bitti az önce stashe attığımız kısma geri dönmek istiyoruz o zaman
+git stash pop
+********************************************************************************************************************************
+
+Master: Güncel yayında olan sürüm olarak düşünebiliriz.
+
+Hotfix: Release branchinde olabilecek hataların çözümü için kullanıyoruz.
+
+Develop: Developerlar tarafından geliştirmeleri tamamlanan özelliklerin tutulduğu branchtir.
+
+Feature: Yeni özellik için oluşturulan branchtir.
+
+Release: Yayına çıkmadan önce versiyonun oluşturulacağı branchtir.
+
+Test: test amaçlı kullanılacak branch.
