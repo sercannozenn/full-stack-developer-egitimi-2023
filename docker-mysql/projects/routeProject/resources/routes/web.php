@@ -1,6 +1,17 @@
 <?php
 use \app\Core\Route;
 
+
+
+Route::get("/kayit", "KayitController@kayitFormGoster");
+Route::post("/kayit", "KayitController@kayit")->name("form.kayit");
+
+
+
+
+
+
+
 Route::get("/register", "RegisterController@showForm")->name("register.showForm");
 Route::post("/register", "RegisterController@register")->name("register.showForm");
 
