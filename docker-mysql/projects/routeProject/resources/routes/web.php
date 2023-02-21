@@ -1,7 +1,10 @@
 <?php
 use \app\Core\Route;
 
-
+Route::get("/sercan", function()
+{
+    view("index");
+});
 
 Route::get("/kayit", "KayitController@kayitFormGoster");
 Route::post("/kayit", "KayitController@kayit")->name("form.kayit");

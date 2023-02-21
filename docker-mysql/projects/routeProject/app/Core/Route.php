@@ -110,13 +110,22 @@ class Route
         self::$prefix = '';
     }
 
-    public static function checkRoute(): void
+    public static function checkRoute()
     {
         if (!self::$isRoute)
         {
-            viewError(404, [
-                'message' => "Aradığınız içerik"
-            ]);
+            $file        = dirname($_SERVER['DOCUMENT_ROOT']) . self::getUri();
+            $explodeFile = explode("/", self::getUri());
+            if ($explodeFile[1] == "public" && file_exists($file))
+            {
+                header("Content-type: text/css");
+                include($file);
+                exit();
+            }
+            else
+            {
+                viewError(404, ['message' => "Aradığınız içerik"]);
+            }
         }
     }
 
