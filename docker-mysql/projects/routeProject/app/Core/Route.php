@@ -110,22 +110,37 @@ class Route
         self::$prefix = '';
     }
 
+    private static function assetInclude(array $explodeExtension,int $extensionIndex, string $filePath): void
+    {
+        $contentType = $explodeExtension[$extensionIndex] == "css" ? "text/css" : "application/javascript";
+        header("Content-type: $contentType");
+        include $filePath;
+        exit();
+    }
     public static function checkRoute()
     {
         if (!self::$isRoute)
         {
-            $file        = dirname($_SERVER['DOCUMENT_ROOT']) . self::getUri();
+            $filePath  = dirname($_SERVER['DOCUMENT_ROOT']) . self::getUri();
             $explodeFile = explode("/", self::getUri());
-            if ($explodeFile[1] == "public" && file_exists($file))
+            if (count($explodeFile) > 1 && $explodeFile[1] == "public" && file_exists($filePath))
             {
-                header("Content-type: text/css");
-                include($file);
-                exit();
+                $explodeExtension = explode(".", self::getUri());
+                $countExtension = count($explodeExtension);
+                if ($countExtension > 1 && $countExtension < 4)
+                {
+                    if ($countExtension < 3 && ($explodeExtension[1] == "css" || $explodeExtension[1] == "js"))
+                    {
+                        self::assetInclude($explodeExtension,1, $filePath);
+                        exit();
+                    }else if ($countExtension > 2 && ($explodeExtension[2] == "css" || $explodeExtension[2] == "js"))
+                    {
+                        self::assetInclude($explodeExtension,2, $filePath);
+                        exit();
+                    }
+                }
             }
-            else
-            {
-                viewError(404, ['message' => "Aradığınız içerik"]);
-            }
+            viewError(404, ['message' => "Aradığınız içerik bulunmuyor."]);
         }
     }
 

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="../../public/assets/css/style.css">
-    <link rel="stylesheet" href="http://route.test/public/assets/css/style.css">
+<!--    <link rel="stylesheet" href="http://route.test/public/assets/css/style.css">-->
 </head>
 <body>
 Test deneme
