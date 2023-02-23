@@ -48,3 +48,11 @@ if (!function_exists("route"))
         \app\Core\Route::goRouteName($routeName, $parameters);
     }
 }
+
+if (!function_exists("request"))
+{
+    function request(): array
+    {
+        return $_REQUEST;
+    }
+}

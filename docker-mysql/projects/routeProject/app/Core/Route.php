@@ -127,7 +127,7 @@ class Route
             {
                 $explodeExtension = explode(".", self::getUri());
                 $countExtension = count($explodeExtension);
-                if ($countExtension > 1 && $countExtension < 4)
+                if ($countExtension > 1 && $countExtension < 5)
                 {
                     if ($countExtension < 3 && ($explodeExtension[1] == "css" || $explodeExtension[1] == "js"))
                     {
@@ -136,6 +136,10 @@ class Route
                     }else if ($countExtension > 2 && ($explodeExtension[2] == "css" || $explodeExtension[2] == "js"))
                     {
                         self::assetInclude($explodeExtension,2, $filePath);
+                        exit();
+                    }else if ($countExtension > 3 && ($explodeExtension[3] == "css" || $explodeExtension[3] == "js"))
+                    {
+                        self::assetInclude($explodeExtension,3, $filePath);
                         exit();
                     }
                 }
