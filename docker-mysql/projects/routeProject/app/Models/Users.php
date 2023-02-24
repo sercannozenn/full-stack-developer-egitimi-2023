@@ -33,10 +33,8 @@ class Users
         $this->phone = $phone;
     }
 
-    public function create(array $data):void
+    public function create():void
     {
-//        session_destroy();
-
         $this->check();
         $_SESSION['users'][] = json_encode($this);
     }
@@ -56,12 +54,36 @@ class Users
                 foreach ($check as $item)
                 {
                     $item = json_decode($item);
-                    $errors[] = ['exist' => ["Daha önce $item->email kulanılmıştır"]];
+                    $errors['exist'][] = "Daha önce $item->email kulanılmıştır";
                 }
                 $_SESSION['errors'] = json_encode($errors);
                 header("Location: /");
                 exit();
             }
+        }
+
+        if (isset($_COOKIE['users']))
+        {
+            $cookieData = unserialize($_COOKIE['users']);
+
+            $check = array_filter($cookieData, function($item){
+                $item = json_decode($item);
+                return $item->email == $this->email;
+            });
+
+            if (count($check))
+            {
+                $errors = [];
+                foreach ($check as $item)
+                {
+                    $item = json_decode($item);
+                    $errors['exist'][] = "Daha önce $item->email kulanılmıştır";
+                }
+                $_SESSION['errors'] = json_encode($errors);
+                header("Location: /");
+                exit();
+            }
+
         }
 
     }

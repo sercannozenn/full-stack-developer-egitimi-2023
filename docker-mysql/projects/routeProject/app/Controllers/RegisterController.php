@@ -33,21 +33,25 @@ class RegisterController extends Controllers
         $users->setFullname($request->fullname);
         $users->setEmail($request->email);
         $users->setPhone($request->phone);
-//        dd($users->getFullname());
-        $users->create([]);
+        $users->create();
+
+        if (isset($_COOKIE['users']))
+        {
+            $users = unserialize($_COOKIE['users']);
+            $users = array_merge($users, $_SESSION['users']);
+        }
+        else
+        {
+            $users = $_SESSION['users'];
+        }
+
+        $users = serialize($users);
 
 
-        dd($_SESSION);
-        dd("$users");
+        setcookie("users", $users, time() + 3600 * 24 * 7);
 
-
-
-        dd($_REQUEST);
-
-
-
-
-
-        
+        session_destroy();
+          route("login.showForm");
+          exit();
     }
 }

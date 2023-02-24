@@ -33,10 +33,8 @@ class Route
             return array_key_exists($uri, $item);
         });
 
-//        if (!$check || !in_array($method, array_keys($supportedMethods)))
         if (!$check)
         {
-
             $supportedMethods = strtoupper(implode(" | ", array_keys($supportedMethods)));
 
             echo json_encode([
@@ -52,7 +50,6 @@ class Route
         self::$routes["get"][self::$prefix . $url] = ["action" => $action];
 
         return new self();
-//        dd(self::$routes);
     }
 
     public static function put(string $url,\Closure|string $action): Route
@@ -60,7 +57,6 @@ class Route
         self::$routes["put"][self::$prefix .$url] = ["action" => $action];
 
         return new self();
-//        dd(self::$routes);
     }
 
     public static function post(string $url,\Closure|string $action): Route
@@ -89,10 +85,11 @@ class Route
     public static function name(string $routeName): Route
     {
         $method = self::getMethod();
-        $routes = self::$routes[$method];
+        $routes = self::$routes["get"];
+//        dd($method);
         $lastRoute = array_key_last($routes);
 
-        self::$routes[$method][$lastRoute]['name'] = $routeName;
+        self::$routes["get"][$lastRoute]['name'] = $routeName;
 
         return new self();
     }
@@ -184,7 +181,6 @@ class Route
         {
             if (isset($where['custom']))
             {
-//                dd($where['custom']);
                 foreach ($where['custom'] as $key => $value)
                 {
                     $url = str_replace("{" . $key . "}", $value,$url);
@@ -211,38 +207,31 @@ class Route
             $pattern = "@^" . $url . "$@";
             if (preg_match($pattern, $uri, $parameters))
             {
-//                unset($parameters[0]);
-//                $parameters = array_values($parameters);
                 array_shift($parameters);
-//                dd($parameters);
                 self::$isRoute = true;
                 $action = $item['action'];
                 self::checkActionIsCallable($action, $parameters);
                 self::checkController($action, $parameters);
-
-
             }
         }
         self::checkRoute();
-
     }
 
     public static function goRouteName(string $routeName, array $parameters = [])
     {
         $method = self::getMethod();
         $routes = self::$routes;
+//        dd($routeName);
+//        dd($routes);
 
-        $url = array_filter($routes[$method], function($route) use ($routeName)
+        $url = array_filter($routes["get"], function($route) use ($routeName)
         {
             return isset($route['name']) && $route['name'] == $routeName;
         });
 
-//        dd([$url, $parameters]);
+
         $url = array_key_last($url);
-//        dd([$parameters, $url]);
         $url = str_replace(array_keys($parameters), array_values($parameters), $url);
-//        dd($url);
         header("Location:$url");
-//        dd($url);
     }
 }

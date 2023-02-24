@@ -2,7 +2,6 @@
 $errors = new stdClass();
 if (isset($_SESSION['errors']) && !empty($_SESSION['errors']))
 {
-
     $errors = json_decode($_SESSION['errors']);
 //    dd($errors);
 }
