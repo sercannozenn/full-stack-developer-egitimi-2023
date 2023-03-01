@@ -6,45 +6,17 @@
 
 @section("icerik")
 
-    <hr>
-    <hr>
-    <hr>
+{{--    <x-article>--}}
+{{--        --}}{{--        <x-slot:title2>Makale 2</x-slot:title2>--}}
+{{--        <x-slot name="title">Makale 1</x-slot>--}}
+{{--        <hr>--}}
+{{--        <x-slot name="content">--}}
+{{--            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda cumque delectus enim ex expedita fugit--}}
+{{--            inventore molestias nihil odio placeat quibusdam quo sapiente sequi velit, voluptatibus! Dolorem ducimus--}}
+{{--            excepturi sequi?--}}
+{{--        </x-slot>--}}
+{{--    </x-article>--}}
 
-    <form action="" method="POST">
-        @csrf
-        @auresMethod("put")
-
-        <input type="text" name="fullname">
-        <button type="submit">Gönder</button>
-    </form>
-
-    <hr>
-    <hr>
-    <hr>
-    <hr>
-    İçerik Alanı
-    <hr>
-    Gelen Yaş Değeri: {{ $age ?? @$person->age }}
-    <hr>
-    Gelen 2.Değer: {{ $sercan ?? @$person->aa }}
-    <hr>
-    @if(isset($person) && isset($person->age))
-        @switch($person->age)
-            @case(10)
-                Çocuk
-            @break
-            @case(20)
-                Genç
-            @break
-            @default
-            Yaşlandın
-        @endswitch
-    @else
-        gelmedi
-    @endif
-    <hr>
-    <hr>
-    <hr>
 @endsection
 
 @section("js")

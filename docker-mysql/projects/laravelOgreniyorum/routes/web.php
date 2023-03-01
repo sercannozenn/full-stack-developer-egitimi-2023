@@ -46,7 +46,7 @@ Route::any("hersey", function(){
 
 
 
-Route::resource("article", "ArticleController");
+//Route::resource("article", "ArticleController");
 //Route::apiResource("/api/article", "Api/ArticleController");
 
 //Route::get("/users/{id}", "UserController@show")
@@ -64,7 +64,8 @@ Route::get("/user/{role}", "UserController@roleCheck")
     ->whereIn('role', ['admin', "user"]);
 
 
-Route::prefix("admin")->group(function(){
+Route::prefix("/admin")->group(function(){
+   Route::get("/create-article", "ArticleController@create")->name("admin.create");
    Route::get("/edit-article", "ArticleController@edit")->name("admin.articleEdit");
    Route::post("/article/{id}/delete", "ArticleController@destroy")->name("admin.articleDestroy");
 });
