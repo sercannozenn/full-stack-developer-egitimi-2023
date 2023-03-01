@@ -1,1 +1,0 @@
-Hoş geldiniz.
