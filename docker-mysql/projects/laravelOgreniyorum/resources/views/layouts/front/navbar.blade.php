@@ -21,6 +21,16 @@
                     {{--                    <a class="nav-link {{ Route::currentRouteName() == "about" ? "active" : "" }}" href="{{ route('about') }}">About</a>--}}
                     <a class="nav-link {{ request()->route()->getName() == "contact" ? "active" : "" }}" href="{{ route('contact') }}">Contact</a>
                 </li>
+                @auth
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <i class="fa fa-sign-out"></i> Logout
+                        </a>
+                    </li>
+                    <form id="logout-form" action="{{ route('auth.logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                @endauth
             </ul>
         </div>
     </div>

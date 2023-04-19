@@ -131,6 +131,22 @@ services:
       - "8080:80"
     networks:
       - backend
+  redis:
+    image: arm64v8/redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./docker/redis:/data
+    networks:
+      - backend
+  redisui:
+    image: patrikx3/p3x-redis-ui:latest
+    ports:
+      - 7843:7843
+    volumes:
+      - ./docker/p3x-redis-ui-settings:/settings
+    networks:
+      - backend
 networks:
   backend:
     driver: bridge

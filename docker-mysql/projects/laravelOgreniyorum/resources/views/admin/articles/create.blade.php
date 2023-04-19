@@ -5,6 +5,7 @@
 @endsection
 
 @section("icerik")
+
     <x-admin.layouts.card class="w-50 mx-auto">
         <x-slot name="title">
             Yeni Makale Ekle

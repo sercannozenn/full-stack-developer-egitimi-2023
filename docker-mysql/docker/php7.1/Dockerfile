@@ -15,7 +15,7 @@ RUN docker-php-ext-install pdo
 RUN docker-php-ext-install pdo_mysql
 RUN docker-php-ext-install tokenizer
 
+RUN apt-get install -y nodejs npm
+
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN composer global require laravel/installer
-RUN export PATH="/root/.composer/vendor/bin:$PATH"
-RUN chown -R www-data:www-data /var/www/html
