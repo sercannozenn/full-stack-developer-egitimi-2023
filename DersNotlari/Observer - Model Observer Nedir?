@@ -1,0 +1,13 @@
+Observer - Model Observer Nedir?
+
+Laravel'de belirli eventları izlemek ve aksiyon almak için kullanılır.
+
+-> Created = Verinin kaydediilmesi 
+-> Updated = Verinin güncellenmesi
+-> Deleted = Verinin silinmesi
+-> Modelin oluşturulması.
+
+
+- Laravel Observer'ın kullanımı, kodu daha modüler ve daha okunaklı hale getirir.
+- Kod tekrarı azaltılmış olur.
+- Ayrıca, birden fazla modelde aynı olayları izlemek istediğinizde, Observer sınıfı kullanarak bu işlemi tek bir yerde gerçekleştirebilirsiniz.

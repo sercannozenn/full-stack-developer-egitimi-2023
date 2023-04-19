@@ -1,0 +1,12 @@
+Observer Kullanımına Örnek
+
+php artisan make:observer UserRegisteredObserver --model=User
+
+public function boot()
+{
+    User::created(function ($user) {
+        $user->notify(new WelcomeEmail);
+    });
+}
+
+php artisan make:notification WelcomeEmail

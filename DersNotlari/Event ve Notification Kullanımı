@@ -1,0 +1,34 @@
+Event ve Notification Kullanımı
+
+
+Event Nedir? 
+
+Event, bir uygulama içinde gerçekleşen bir olayı temsil eden bir sınıftır. 
+
+Bu olaylar, örneğin 
+
+-> bir kullanıcının kaydolması, 
+-> bir blog gönderisinin oluşturulması, 
+-> bir ödeme işlemi yapılması 
+
+gibi şeyler olabilir.
+
+Laravel'de Event Tetiklemek İçin Yöntemler: 
+-> Listenerları Kullanmak
+-> Observer Kullanmak
+
+Notification Nedir?
+
+Notification ise, belirli bir kullanıcıya veya kullanıcı grubuna, uygulamanızda gerçekleşen bir olayla(eventla) ilgili bilgi vermek için kullanılır.
+
+Örneğin
+
+-> bir kullanıcı kaydolduğunda kullanıcıya hoş geldin veya doğrulama maili gönderme işlemi
+-> bir blog gönderisi oluşturulduğunda kullanıcılara bildirimlerin gitmesi
+
+Notification'lar, e-posta, SMS, Push Notification veya herhangi bir diğer kanal aracılığıyla kullanıcıya iletilirler.
+
+
+Event ve Notification a Genel Bakış
+
+Eventlar bir olayı temsil ederken, bu olayın sonucunda alınacak kullanıcı bilgilendirme aksiyonunu notificationlar ile geliştiririz.

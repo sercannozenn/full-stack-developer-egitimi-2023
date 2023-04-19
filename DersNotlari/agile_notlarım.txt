@@ -1,0 +1,90 @@
+Agile Notlarım
+----------------------------------------------------
+
+Waterfall Yöntemi
+ 	- İhtiyaçlar baştan belirlenir (requirements)
+ 	- Analysis - Analiz edilmesi
+ 	- Design - Tasarım
+ 	- Coding İmplamantation
+ 	- Testing
+ 	- Operating deployment
+ 	- Maintainence
+
+ * Gereksinimler iyi dökümante edilmiş ve net ise,
+ * Ürün tanımı değişmeyecekse,
+ * Teknoloji iyi anlaşılmış olmalı,
+ * Proje süresi kısa ise,
+ * Uygun kaynaklar varsa 
+
+ - Geleneksel projelerde başarısızlık 
+				=> Gereksinimlerin net olmayışı ve sıkça talep değişiklikleri
+				=> Test için zaman daralıyor.
+				=> Zaman geçiyor.
+
+Kaizen: 3M Muri, Mura, Muda => Herşey israf oluyor. 
+Kai => değişim
+Zen => Daha iyisini elde etme
+
+Sürekli değişim ve iyisini elde etme isteği demektir. 
+
+SCRUM'ın Değerleri
+
+-> Cesaret 		=> insiyatif alma 
+-> Odaklanma	=> 2 haftalık küçük hedeflere tamamlamaya yönelik odaklanmak
+-> Taahhüt		=> Verilen sözün ya da 2 haftalık sürecin sonunda isterlerin takım olarak tamamlanması
+-> Saygı		=> Takım üyelerinin birbirlerinin fikirlerine saygı duymalı ki beyin fırtınası 							   yapılarak yaratıcılığı ön plna çıkarabilelim.
+-> Açıklık		=> 
+
+
+
+
+Scrum Product OWner => Kuruma hesap verir. 
+ -> Geliştiricilerin yöneticisi değildir. 
+ -> Geliştiricilere iş ve görev ataması yapmaz. 
+ -> Geliştiricilerin iş yapış biçimine karışmaz. 
+ -> Müşteriyi temsil eden, liderlik eden kurumsal çevikliğe katkı sağlayan bir roldür. 
+ -> Yol haritasını ve üretilecek değeri tanımlar.
+ -> Product backlog dan sorumludur. 
+            - Product backlogtan sorumludur.
+
+=> Kim olabilir? 
+    * Karar almaya Yetkilendirilmiş.
+    * Karar ve sonuçlarının farkında 
+    * Birim yöneticileri olabilir. 
+    * İletişim kuvvetli
+    * Belirsizlikleri ortadan kaldıracak
+    * Müzakere becerileri
+    * Her zaman erişilebilir olmalı,
+    * Kararlı pragmatik ve hedef odaklı
+
+    1 Product = 1 Product Backlog = 1 Product Owner
+
+Scrum Master
+ -> Planlamaya yardımcı olur
+ -> Verimli çalışmaya destek, takımın işlerini organize etmesini sağlar.
+ -> Verimliliğin artmasını sağlar ve motive eder. 
+ -> Takımı dış müdahale ve etkilerden korur.
+ -> Takımın engellerini ortadan kaldırır. 
+ -> Scrum Framework'ünü işletir. 
+ -> Lider 
+
+ Product Owner'a
+    -> backlog oluşturulurken yardımcı olacak
+
+
+    User Story
+ 
+
+
+Sprint Grooming
+
+
+
+
+
+
+
+
+
+
+

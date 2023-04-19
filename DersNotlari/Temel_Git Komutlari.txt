@@ -1,0 +1,177 @@
+Temel Git Komutları
+
+git init => Git i ilk defa bulunulan klasörde oluşturmak için kullanılır.
+Git reposunun oluşturulmasını sağlar. 
+******************************
+
+
+git add dosyaAdı.uzantısı => 
+
+Bir dosya repoya gönderilmeden önce hazırlanma alanına gönderilmesi gerekir. Yani staging area alanına gönderilir. Boşluk bırakarak birden çok dosya aynı anda gönderilebilir.
+
+
+git add . yapıldığında ise . ile staging areaya atılmamış tüm dosyaları staging areaya atar.
+
+git rm dosyaAdi stagingAreadan seçilen dosyayı çıkarır.
+git reset staging areadan dosyayı çıkarır.
+
+******************************
+
+git commit => Staging areada bulunan dosyaları yerel depoya(local repository) yüklemek için kullanılır. 
+
+git commit -m "Mesajınız" => -m tagi ekleyerek commit e ait mesajımızı belirtiriz.
+
+Yalnızca git commit yazdığımızda da varsayılan git template i üzerinden mesajınızı yazmanız sağlanabilir. 
+
+Commit mesajları emir kipiyle yazılmalıdır. Yapılan geliştirmeyle ilgili bilgi veren bir cümle kurulmalıdır. 
+
+******************************
+
+git branch
+
+Genellikle projenin ana dalı masterdır. 
+
+Geçtiğimiz seneler ana dalı main olarak güncellendi. Ancak dilerseniz tabiki master olarakta kullanmaya devam edebilirsiniz. 
+
+******************************
+
+Branchleri kullanmamızdaki iki temel amaç vardır: 
+
+1- Bireysel Geliştirme Yapıyorsak
+Projemize yeni özellikler katmaya çalıştığımızda yani featurelar geliştirmek istediğimizde bu yeni geliştirmeler projemizin güncel halini bozabilme potansiyeline sahiptir. Hem projemizin o anki çalışmasını bozmamak hem de yeni geliştirmeyi yaparak projemizin güncel hali üzerinde görmek istiyorsak branch yapısını kullanmamız yararlı olacaktır. Yani yeni bir branch açarak yeni branch üzerinde geliştirmemizi yapmamız gerekecektir. 
+
+Geliştirme işlemi bittikten ve çalıştığından emin olduktan sonra bu yeni branchi hangi branchten açtıysak o branch ile merge ederek projemizin güncel yayındaki haline alabiliriz.
+
+Aynı anda birden fazla branch açabiliriz. 
+
+2- Ekip Olarak Kullanıyorsak
+Ekip olarak kullandığımızda ise yukarıdaki 1.madde geçerli ve ek olarak ekip arkadaşımızla aynı anda projenin farklı alanlarını geliştirebiliriz. Bu geliştirme sırasında diğer ekip arkadaşımız projenin hangi anında yeni branch oluşturmuşsa o branch üzerinde o anki güncel bilgiler olacaktır. Bunun detayını deneyerek göreceğiz. 
+
+******************************
+
+Yeni bir branch oluşturmak  => git branch branchAdi
+Branch değiştirmek 			=> git checkout branchAdi
+Branch silmek 				=> git branch -d branchAdi
+
+******************************
+
+git remote add komutu
+Yerelde bulunan git repomuza uzak sunucuda bulunan repoyu ekleme işlemidir. 
+
+Örnek kullanım: 
+git remote add origin https://github.com/sercannozenn/full-stack-developer-egitimi-2023.git
+Yerel repomuza origin adlı bir uzak sunucu eklemiş olduk. Origin ismi genelde yaygın kullanıldığı için bu şekilde isimlendiriyoruz ancak farklı bir isim de verilebilir. 
+
+******************************
+
+git push 
+
+komutu ile yerel repomuzda bulunan commitleri uzak sunucuya göndermiş oluruz. 
+
+git push origin branchAdi
+
+Örneğin master branchini yollamak için
+git push origin master
+
+
+******************************
+
+
+git status 
+
+komutu ile staging area (hazırlık alanı) da bulunan ya da bulunmayan dosyaları görebilirsiniz. 
+Bu sayede istediğiniz dosyaları bu komut ile kontrol ederek staging areaya atabilir ya da staging areada olan dosyalarınızı commitleyebilirsiniz. 
+
+******************************
+
+git log
+
+yerel repomuzdaki commit geçmişimizi görebiliriz. Her commitimizi ayrı bir ID ile ayrıştırıldığına da dikkat etmeliyiz bu ID'yi çeşitli yerlerde kullanarak işlemler yapabiliriz. 
+
+git log --pretty=oneline
+
+
+******************************
+
+git clone 
+
+uzak repomuzdaki projemizi klonlamak yani çekmek için kullanılır. 
+
+git clone link
+
+******************************
+git pull 
+Uzak repomuzda bulunan değişikliklerimi yerel repomuzla birleştirmek istediğimizde kullanırız.
+
+örnek: 
+git pull origin master
+
+******************************
+
+git merge
+o anda üzerinde bulunulan branch ile birleştirme istenen branchi birleştirmek için kullanılır
+
+git merge branchAdi
+
+******************************
+
+git reset soft hard ve mixed ile kullanılabilir. 
+
+git reset --soft logID => Belirtilen logID ye ait commiti ve sonraki commitleri silerek staging areada tutar.
+
+git reset --mixed logID => Belirtilen logID ye ait commiti ve sonraki commitleri silerek staging areada çıkartılmış şekilde tutar.
+
+git reset --hard logID => Belirtilen logID ye ait commiti ve sonraki commitleri siler.
+
+git reset --soft HEAD~1 => son committen bir önceki commite döner.
+
+******************************
+
+git revert logID
+
+commit ettiğimiz herhangi bir değişikliği geri almak için kullanırız. Çalışma mantığı ise istenilen commiti geri alırken yeni bir commit oluşturur ve bu yeni commit içerisinde değişikliği uygular. 
+
+******************************
+
+git cherry-pick commitID-logID
+
+commiti üzeirnde olduğumuz branchin içerisine kopyalar.
+
+
+******************************
+
+git diff
+Farklılıkları yani değişen alanları görebiliriz.
+
+******************************
+
+
+git stash 
+
+Branchler arasında geçiş yapmak istiyoruz ancak şu anda çalıştığımız branchte commit atmadığımız değişiklik yaptığımz dosyalar bulunuyorsa bu dosyalardaki değişikliklerin kaybolmasını istemiyorsak bu komutu kullanabiliriz. 
+
+git stahs list
+Daha önce stahslenenlerin listesini görebiliriz
+
+Diyelim diğer branchte çalıştık ve işimiz bitti az önce stash e attığımız kısma geri dönmek istiyoruz o zaman 
+
+git stash pop komutunu kullanmalıyız. 
+
+******************************
+
+
+Master: Şu anda client tarafında kullanılan sürüm olarak düşünebiliriz.
+
+Hotfix: Release branch’inde olabilecek hataların çözümü için, resimden de anladığınız gibi master’a, yani aktif sisteme atılan bugfix’ler için oluşturulmuştur.
+
+Release: Canlıya alınmadan önce geliştirmeleri, testleri ve herşeyi tamamlanan kullanıcılara açılmayı bekleyen özelliklerin tutulduğu branch olarak düşünebiliriz.
+
+Develop: Developer tarafında geliştirmeleri tamamlanan özelliklerin tutulduğu branch olarak düşünülmelidir. Geliştirmesi tamamlanan özellikler Release branch’i ile birleştirilir.
+
+Feature: Yeni bir özellik için oluşturulan bu branch işlemin tamamlanmasından sonra Develop branch’i ile birleştirilir.
+
+
+
+
+
+

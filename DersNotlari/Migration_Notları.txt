@@ -1,0 +1,42 @@
+php artisan make:migration create_flights_table
+
+php artisan migrate:rollback           => En son yapılan geçiş işlemini kaldırır
+php artisan migrate:rollback --step=2  => Son 2 oluşturulan tabloyu kaldırır.
+php artisan migrate:rollback --batch=3 => Batch numarasına göre kaldırır.
+
+php artisan migrate:reset                => Tüm tabloları kaldırır.
+
+php artisan migrate:refresh            => Önce tüm kodları geri alır sonra tekrar migrate eder. 
+php artisan migrate:fresh          => Migrations da dahil tüm tabloları kaldırır. Sonra tekrar çağırır.
+
+
+$table->charset = 'utf8mb4';
+$table->collation = 'utf8mb4_unicode_ci';
+
+
+
+Schema::rename($from, $to);
+Schema::drop('users');
+
+php artisan make:migration add_paid_to_users_table --table=users
+        $table->integer('paid')->after('status');
+
+
+php artisan make:migration rename_users_column
+
+
+$table->string('name', 50)->change();
+    
+    $table->integer('votes')->unsigned()->default(1)->comment('my comment')->change();
+
+
+    $table->renameColumn('from', 'to');
+
+    $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
+
+php artisan make:seeder ArticleSeeder
+php artisan make:factory PostFactory
+
+
+

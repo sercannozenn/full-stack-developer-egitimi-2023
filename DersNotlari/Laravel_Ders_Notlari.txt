@@ -1,0 +1,104 @@
+route ile link verme
+
+Route::is()
+Route::currentRouteName();
+request()->route()->getName();
+
+redirect()->route('index', ['id' => $id]);
+
+Redirect::route("");
+
+------------------------------------------------------------------------------------
+
+
+Route Türleri: 
+
+Route::post("users/{id}", "UsersController@show");
+Postman ile istek at ve gör
+
+
+Route::match(['get', 'post'], "/users/{id}", "UsersController@show");
+
+------------------------------------------------------------------------------------
+
+
+
+Route::put("/users/{id}/guncelle", "UsersController@update");
+Örneğin kullanıcının tüm bilgilerini güncellemek istiyorsak put kullanmalıyız. 
+
+Patch ise 
+Kullanıcının sadece bir bilgili güncellenmek isteniyorsa kullanılır. Örneğin email.
+
+
+------------------------------------------------------------------------------------
+
+
+Bir form oluşturarak put patch ve post methodlarını göster
+@csrf _token
+
+{{ method_field("PUT")}}
+@method("PUT")
+<input type="hidden" name="_method" value="PUT" >
+
+------------------------------------------------------------------------------------
+
+
+Route::delete("users/{id}/sil", "UsersController@delete");
+
+Route::any("hersey", "UsersController@hersey");
+
+------------------------------------------------------------------------------------
+
+
+Route::resource("article", "ArticleController");
+php artisan make:controller --resource => Resource Controller Oluşturur.
+only ve except kullanımını göster
+
+------------------------------------------------------------------------------------
+
+
+Route::apiResource("api-articles", "Api/ArticleController");
+
+
+------------------------------------------------------------------------------------
+
+
+
+Parametreler nasıl alınır? 
+
+$request->parametre ve 
+
+function(Request $request, $id, $lang)
+{
+	
+}
+
+
+Opsiyonel Parametre Kullanımı ?
+
+------------------------------------------------------------------------------------
+Route::post("users/{id}", "UsersController@show")->where(['id' => '[0-9]+']);
+Route::post("users/{id}", "UsersController@show")->whereNumber("id");
+Route::post("users/{name}", "UsersController@show")->whereAlpha("name");
+Route::get('/category/{category}', "UserController@category")->whereIn('category', ['movie', 'song', 'painting']);
+
+------------------------------------------------------------------------------------
+
+
+Route::prefix("admin")->group(function()
+{
+	Route::get("/", "AdminController@index");
+});
+
+------------------------------------------------------------------------------------
+
+Route::controller(OrderController::class)->group(function () {
+    Route::get('/orders/{id}', 'show');
+    Route::post('/orders', 'store');
+});
+
+------------------------------------------------------------------------------------
+
+
+php artisan route:cache
+php artisan route:clear

@@ -1,0 +1,55 @@
+Event - Listener - Mail Örneği
+
+php artisan make:event UserRegistered
+class UserRegistered
+{
+    use Dispatchable, SerializesModels;
+
+    public $user;
+
+    
+    public function __construct(User $user)
+    {
+        $this->user = $user;
+    }
+}
+
+php artisan make:listener SendVerifyEmailListener --event=UserRegistered
+
+class SendVerifyEmailListener implements ShouldQueue
+{
+    use InteractsWithQueue;
+
+    
+    public function handle(UserRegistered $event)
+    {
+        Mail::to($event->user->email)->send(new VerifyMail($event->user));
+    }
+}
+
+php artisan make:mail VerifyMail
+
+
+class VerifyMail extends Mailable
+{
+    use Queueable, SerializesModels;
+
+    public $user;
+
+
+    public function __construct(User $user)
+    {
+        $this->user = $user;
+    }
+
+    public function build()
+    {
+        return $this->view('emails.verify')
+                    ->with(['user' => $this->user]) //token
+                    ->subject('Hoş Geldiniz!');
+    }
+}
+
+
+event(new UserRegistered($user));
+

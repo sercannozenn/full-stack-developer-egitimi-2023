@@ -1,0 +1,44 @@
+Controller'dan view a data gönderme
+------------------------------------------------------------------------------------
+
+$post = new StdClass();
+
+return view("sercan", ["post" => $post]);
+
+return view("sercan", compact("post"));
+------------------------------------------------------------------------------------
+
+
+
+return view("sercan")->with("post", $post)->with("alan2", "alan2");
+
+------------------------------------------------------------------------------------
+
+
+@if $else kullanımını config ayarıymış gibi göster
+
+
+------------------------------------------------------------------------------------
+
+Kendi Directive ini nasıl oluşturursun. 
+@mymethod("PUT");
+
+AppServiceProvider -> Blade::directive("mymethod", function($val = null))
+{
+	$val = str_replace("'", "", $val);
+
+	$input = '<input type="hidden" name="_method" value="' . $val . '">';
+	return $input;
+});
+
+Languages & Framework > PHP > Blade
+
+------------------------------------------------------------------------------------
+
+
+Veri tabanı işlemlerinden sonra
+
+Route::get('/posts/{post:slug}', function (Post $post) {
+    return $post;
+});
+

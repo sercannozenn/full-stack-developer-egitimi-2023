@@ -1,0 +1,47 @@
+Redis Kurulumu
+
+redis:
+  image: redis:latest
+  ports:
+    - "6379:6379"
+  volumes:
+    - redis-data:/data
+  networks:
+    - backend
+
+composer require predis/predis
+
+SESSION_DRIVER=redis
+    
+
+Session Kullanımı
+
+Kullanıcılara kişiselleştirilmiş öneriler sunmak için oturum kullanabilirsiniz. Kullanıcıların önceki gezinmeleri ve tercihleri hakkında bilgi toplayabilirsiniz ve bu bilgilere dayanarak kullanıcılara ilgi alanlarına göre öneriler sunabilirsiniz.
+
+
+public function show(Article $article)
+{
+    // Makaleyi göster
+    // ...
+
+    // Kullanıcının okuduğu makaleleri session'da tut
+    $articlesRead = session()->get('articles_read', []);
+    array_push($articlesRead, $article->id);
+    session()->put('articles_read', $articlesRead);
+
+    // Kullanıcıya önerilecek makaleleri al
+    $articlesRecommended = Article::whereNotIn('id', $articlesRead)->take(3)->get();
+
+    // Önerilen makaleleri görüntüle
+    return view('articles.show', compact('article', 'articlesRecommended'));
+}
+
+public function suggestArticles()
+{
+    $visitedArticles= session()->get('visited_articles');
+    $visitedCategories=Article::whereIn('id',$visitedArticles)->pluck('category_id')->toArray();
+
+    $suggestedArticles = Article::whereIn('category_id', $visitedCategories)->whereNotIn('id', $visitedArticles)->get();
+
+    return view('suggest_articles', compact('suggestedArticles'));
+}

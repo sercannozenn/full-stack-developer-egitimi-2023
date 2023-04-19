@@ -1,0 +1,89 @@
+Temel Terminal Komutları Linux
+
+~ => // Tilda işareti Mac ve Windowsta User Klasörünü ifade eder
+
+mkdir klasörAdı=> Klasör oluşturma.
+
+touch dosyaAdı=> Dosya oluşturma.
+
+ls => Bulunulan klasörün içerisinde olan klasör ve dosyaları listeler
+ls -a => Bulunulan klasörün içerisinde olan gizli dosyalar dahil tüm dosyaları ve klasörleri listeler
+
+widnows listeleme komutu => dir
+
+cd klasörYolu=> Klasöre giriş yapma.
+
+. => Bulunduğumuz klasörü işaret eder.
+.. => Bulunduğumuz klasörün bir üst klasörünü ifade eder. 
+* => Bulunduğumuz klasördeki herşeyi ifade eder. 
+
+* => Tüm dosya isimleri
+a* => a ile başlayan tüm dosya isimleri
+b*.txt => b ile başlayan tüm txt dosyaları
+abc??? => abc ile başlayan 3 karakter daha devamında olan dosyalar
+[abc]* a veya b veya c ile başlayan dosya isimleri
+
+rmdir klasörAdı => Klasör Silme / Windowsta da aynı.
+rmdir klasörAdı /S => İçi dolu olan bir klasörü silmek için
+
+rm -r => klasörAdı => Bu komutla da Klasör silme işlemi yapılabilir. 
+
+rm dosyaAdı => Dosya silme
+del dosyaAdı => Windows dosya Silme 
+
+clear => Ekran Temizleme
+cls => Windows Ekran Temizleme
+
+
+pwd => Mevcut dizini gösterir / Yolu
+cp => Dosya kopyalama
+mv => Dosya taşıma
+cat => Dosya içeriğini görüntüleme
+nano => işletim sisteminde yüklüyse dosya düzenlemeyi sağlar.
+
+
+
+history => geçmiş yazılmış komutlar
+
+Ping nasıl atılır? 
+
+Örnek Google: 
+
+ping google.com
+
+
+Komut sisteminde çalışan bir kod nasıl durdurulur. => control + c 
+
+
+sudo => Yönetici olmayı sağlar. 
+
+Terminalde herhangi bir işlem sonrasında parola sorulursa yazacağınız parola ekran da görünmeyecektir. 
+Görülmemesine rağmen aslında klavyeden her bastığınız karakter yazılıyordur. Görmüyorsunuz diye yazılmıyor sanmayın. 
+
+
+
+ls -al => Tüm dosya ve klasörlerin izinlerini listeler.
+
+chmod => dosya ve klasörlerin izinlerini değiştirmede kullanılır.
+
+chmod dan sonra gelen sayılar
+rwx = 7          rw-  = 6          r-x = 5          r– = 4
+
+-d rwx rwx rwx
+Komutunun anlamı
+
+başta d harfi varsa klasör anlamına gelir.
+başta - varsa dosya anlamına gelir
+
+ilk üçlü yani 
+r => Okuma 
+w => Yazma 
+x => Çalıştırma 
+Dosyanın veya klasörün sahibinin izinleri
+
+ikinci üçlü 
+Dosyanın veya klasörün gruptakiler için izinleri
+
+üçüncü üçlü 
+Dosyanın veya klasörün diğer kullanıcılar için izinleri
+
